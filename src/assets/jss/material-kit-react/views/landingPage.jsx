@@ -4,7 +4,8 @@ const landingPageStyle = {
   container: {
     zIndex: "12",
     color: "#FFFFFF",
-    ...container
+    ...container,
+    paddingBottom: "30px"
   },
   title: {
     ...title,
@@ -29,9 +30,7 @@ const landingPageStyle = {
       marginTop: "30px",
       fontSize: "17px"
     },
-    container: {
-      paddingBottom: "350px"
-    }
+    container: {}
   },
   parallax_button: {
     marginTop: "10px",

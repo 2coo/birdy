@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import List from "@material-ui/core/List";
+import { List, Hidden } from "@material-ui/core";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
@@ -17,6 +17,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";
+import FontAwesomeIcon from "components/FontAwesomeIcon/FontAwesomeIcon";
 
 function HeaderLinks({ ...props }) {
   const { classes } = props;
@@ -53,7 +54,7 @@ function HeaderLinks({ ...props }) {
           className={classes.navLink}
         >
           {/* <CloudDownload className={classes.icons} /> */}
-          TEAM
+          HOME
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -64,13 +65,48 @@ function HeaderLinks({ ...props }) {
           className={classes.navLink}
         >
           {/* <CloudDownload className={classes.icons} /> */}
-          CONTACT
+          COURSES
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          href="/contact"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        >
+          {/* <CloudDownload className={classes.icons} /> */}
+          FEES
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button color="transparent" target="_blank" className={classes.navLink}>
           {/* <CloudDownload className={classes.icons} /> */}
-          JOIN
+          ABOUT US
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          {/* <CloudDownload className={classes.icons} /> */}
+          BLOG
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          {/* <CloudDownload className={classes.icons} /> */}
+          CONTACT US
+        </Button>
+      </ListItem>
+      {!props.isColorChanged ? (
+        <Hidden smDown>
+          <hr className={classes.divider} />
+        </Hidden>
+      ) : null}
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          {/* <CloudDownload className={classes.icons} /> */}
+          <FontAwesomeIcon icon="fas fa-fingerprint" iconColor="inherit" />
+          LOGIN
         </Button>
       </ListItem>
       {/* <ListItem className={classes.listItem}>

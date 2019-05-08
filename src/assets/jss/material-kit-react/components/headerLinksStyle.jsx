@@ -20,8 +20,12 @@ const headerLinksStyle = theme => ({
     display: "block",
     width: "auto",
     margin: "0",
-    padding: "0",
+    padding: "0 5px",
+    "&:first-child": {
+      padding: 0
+    },
     [theme.breakpoints.down("sm")]: {
+      padding: "0",
       width: "100%",
       "&:after": {
         width: "calc(100% - 30px)",
@@ -39,7 +43,7 @@ const headerLinksStyle = theme => ({
   navLink: {
     color: "inherit",
     position: "relative",
-    padding: "0.9375rem",
+    padding: "5px 35px",
     fontWeight: "400",
     fontSize: "18px",
     textTransform: "uppercase",
@@ -111,6 +115,13 @@ const headerLinksStyle = theme => ({
   ...tooltip,
   marginRight5: {
     marginRight: "5px"
+  },
+  divider: {
+    width: "1px",
+    position: "absolute",
+    height: "19px",
+    right: "154px",
+    top: "0"
   }
 });
 

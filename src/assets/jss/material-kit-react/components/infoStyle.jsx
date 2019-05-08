@@ -17,8 +17,7 @@ const infoStyle = {
   },
   iconWrapper: {
     float: "left",
-    marginTop: "24px",
-    marginRight: "10px"
+    marginTop: "24px"
   },
   primary: {
     color: primaryColor
@@ -42,27 +41,27 @@ const infoStyle = {
     color: grayColor
   },
   icon: {
-    width: "36px",
-    height: "36px"
+    width: "auto",
+    height: "auto"
   },
   descriptionWrapper: {
     color: grayColor,
     overflow: "hidden"
   },
-  title,
+  title: {
+    ...title,
+    fontSize: "30px"
+  },
   description: {
     color: grayColor,
     overflow: "hidden",
     marginTop: "0px",
-    fontSize: "14px"
+    fontSize: "20px"
   },
   iconWrapperVertical: {
     float: "none"
   },
-  iconVertical: {
-    width: "61px",
-    height: "61px"
-  }
+  iconVertical: {}
 };
 
 export default infoStyle;

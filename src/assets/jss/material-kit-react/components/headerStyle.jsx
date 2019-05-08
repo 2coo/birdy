@@ -13,6 +13,9 @@ import {
 } from "assets/jss/material-kit-react.jsx";
 
 const headerStyle = {
+  topMenu: {
+    padding: "10px 0"
+  },
   appBar: {
     display: "flex",
     border: "0",
@@ -35,7 +38,8 @@ const headerStyle = {
   },
   absolute: {
     position: "absolute",
-    zIndex: "1100"
+    zIndex: "1100",
+    top: "70px"
   },
   fixed: {
     position: "fixed",
@@ -43,7 +47,7 @@ const headerStyle = {
   },
   container: {
     ...container,
-    minHeight: "50px",
+    minHeight: "30px",
     flex: "1",
     alignItems: "center",
     justifyContent: "space-between",
@@ -105,17 +109,24 @@ const headerStyle = {
     boxShadow:
       "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46)"
   },
+  orange: {
+    backgroundCOlor: "#F57915",
+    color: "#FFFFFF"
+  },
   transparent: {
     backgroundColor: "transparent !important",
     boxShadow: "none",
-    paddingTop: "25px",
+    // paddingTop: "25px",
     color: "#FFFFFF"
   },
   dark: {
     color: "#FFFFFF",
     backgroundColor: "#212121 !important",
     boxShadow:
-      "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)"
+      "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)",
+    opacity: 1,
+    "-webkit-transform": "translate(0,0)",
+    "-webkit-transition": "-webkit-transform .2s,background .3s,color .3s"
   },
   white: {
     border: "0",
@@ -147,6 +158,29 @@ const headerStyle = {
     paddingRight: "0px",
     paddingLeft: "0",
     ...transition
+  },
+  "@media (min-width: 320px) and (max-width: 1024px)": {
+    absolute: {
+      top: "0"
+    }
+  },
+  translatedLanguages: {
+    display: "flex",
+    "& ul": {
+      display: "inline-block",
+      listStyle: "none",
+      padding: "0 0 0 10px",
+      margin: 0,
+      "& li": {
+        display: "inline",
+        margin: 0,
+        padding: "0 0 0 10px",
+        "& img": {
+          width: "20px",
+          height: "12px"
+        }
+      }
+    }
   }
 };
 

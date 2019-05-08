@@ -9,21 +9,43 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import infoStyle from "assets/jss/material-kit-react/components/infoStyle.jsx";
 
 function InfoArea({ ...props }) {
-  const { classes, title, description, iconColor, vertical } = props;
-  const iconWrapper = classNames({
-    [classes.iconWrapper]: true,
-    [classes[iconColor]]: true,
-    [classes.iconWrapperVertical]: vertical
-  });
-  const iconClasses = classNames({
-    [classes.icon]: true,
-    [classes.iconVertical]: vertical
-  });
+  const { classes, title, description, vertical, iconName, iconColor } = props;
+  let iconWrapper = null;
+  let iconClasses = null;
+  let iconComponent = null;
+  if (props.icon && !props.proof_image) {
+    iconWrapper = classNames({
+      [classes.iconWrapper]: true,
+      [classes.iconWrapperVertical]: vertical
+    });
+    iconClasses = classNames({
+      [classes.icon]: true,
+      [classes.iconVertical]: vertical
+    });
+
+    iconComponent = (
+      <div className={iconWrapper} style={{ fontSize: "70px" }}>
+        <props.icon
+          fontSize="inherit"
+          icon={iconName}
+          iconColor={iconColor}
+          className={iconClasses}
+        />
+      </div>
+    );
+  }
+  let imageComponent = null;
+  if (props.proof_image) {
+    imageComponent = (
+      <div>
+        <img src={props.proof_image} />
+      </div>
+    );
+  }
   return (
     <div className={classes.infoArea}>
-      <div className={iconWrapper}>
-        <props.icon className={iconClasses} />
-      </div>
+      {iconComponent}
+      {imageComponent}
       <div className={classes.descriptionWrapper}>
         <h4 className={classes.title}>{title}</h4>
         <p className={classes.description}>{description}</p>
@@ -38,18 +60,8 @@ InfoArea.defaultProps = {
 
 InfoArea.propTypes = {
   classes: PropTypes.object.isRequired,
-  icon: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  iconColor: PropTypes.oneOf([
-    "primary",
-    "warning",
-    "danger",
-    "success",
-    "info",
-    "rose",
-    "gray"
-  ]),
   vertical: PropTypes.bool
 };
 

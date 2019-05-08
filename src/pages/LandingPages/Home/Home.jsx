@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 
 import Header from "components/Header/Header";
-import HeaderLinks from "components/Header/HeaderLinks/HeaderLinks";
 import Parallax from "components/Parallax/Parallax";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -13,6 +12,8 @@ import Button from "components/CustomButtons/Button.jsx";
 import BrandLogo from "assets/img/birdy-logo.png";
 import BrandLogo2 from "assets/img/birdy-logo-black.png";
 import ProductSection from "./Sections/ProductSection";
+import AppBar from "@material-ui/core/AppBar";
+import { Toolbar } from "@material-ui/core";
 const dashboardRoutes = [];
 const Home = props => {
   const { classes, ...rest } = props;
@@ -22,10 +23,9 @@ const Home = props => {
         color="transparent"
         routes={dashboardRoutes}
         brand={BrandLogo}
-        rightLinks={<HeaderLinks />}
-        fixed
+        brandBlack={BrandLogo2}
         changeColorOnScroll={{
-          height: 100,
+          height: 80,
           color: "dark"
         }}
         {...rest}
@@ -94,7 +94,7 @@ const Home = props => {
                     SAT
                   </Button>
                 </GridItem>
-                <GridItem xs={12} md={2} sm={12}>
+                {/* <GridItem xs={12} md={2} sm={12}>
                   <Button
                     className={classes.parallax_button}
                     color="success"
@@ -105,8 +105,8 @@ const Home = props => {
                   >
                     ACT
                   </Button>
-                </GridItem>
-                <GridItem xs={12} md={2} sm={12}>
+                </GridItem> */}
+                {/* <GridItem xs={12} md={2} sm={12}>
                   <Button
                     className={classes.parallax_button}
                     color="success"
@@ -117,8 +117,8 @@ const Home = props => {
                   >
                     Praxis
                   </Button>
-                </GridItem>
-                <GridItem xs={12} md={2} sm={12}>
+                </GridItem> */}
+                {/* <GridItem xs={12} md={2} sm={12}>
                   <Button
                     className={classes.parallax_button}
                     color="success"
@@ -129,8 +129,8 @@ const Home = props => {
                   >
                     LSAT
                   </Button>
-                </GridItem>
-                <GridItem xs={12} md={2} sm={12}>
+                </GridItem> */}
+                {/* <GridItem xs={12} md={2} sm={12}>
                   <Button
                     className={classes.parallax_button}
                     color="success"
@@ -141,7 +141,7 @@ const Home = props => {
                   >
                     MCAT
                   </Button>
-                </GridItem>
+                </GridItem> */}
                 <GridItem xs={12} md={2} sm={12}>
                   <Button
                     className={classes.parallax_button}
