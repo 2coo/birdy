@@ -41,7 +41,6 @@ function RegularButton({ ...props }) {
     [classes.justIcon]: justIcon,
     [className]: className
   });
-  console.log(className);
   return (
     <Button {...rest} className={btnClasses}>
       {children}

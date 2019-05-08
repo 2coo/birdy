@@ -14,6 +14,7 @@ import BrandLogo2 from "assets/img/birdy-logo-black.png";
 import ProductSection from "./Sections/ProductSection";
 import AppBar from "@material-ui/core/AppBar";
 import { Toolbar } from "@material-ui/core";
+import CountSection from "./Sections/CountSection";
 const dashboardRoutes = [];
 const Home = props => {
   const { classes, ...rest } = props;
@@ -25,7 +26,7 @@ const Home = props => {
         brand={BrandLogo}
         brandBlack={BrandLogo2}
         changeColorOnScroll={{
-          height: 80,
+          height: 70,
           color: "dark"
         }}
         {...rest}
@@ -159,6 +160,11 @@ const Home = props => {
           </GridContainer>
         </div>
       </Parallax>
+      <div className={classNames(classes.CountSection)}>
+        <div className={classNames(classes.container)}>
+          <CountSection />
+        </div>
+      </div>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />

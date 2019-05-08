@@ -39,7 +39,7 @@ const headerStyle = {
   absolute: {
     position: "absolute",
     zIndex: "1100",
-    top: "70px"
+    top: "80px"
   },
   fixed: {
     position: "fixed",
@@ -109,10 +109,6 @@ const headerStyle = {
     boxShadow:
       "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46)"
   },
-  orange: {
-    backgroundCOlor: "#F57915",
-    color: "#FFFFFF"
-  },
   transparent: {
     backgroundColor: "transparent !important",
     boxShadow: "none",
@@ -166,6 +162,7 @@ const headerStyle = {
   },
   translatedLanguages: {
     display: "flex",
+    padding: "0 10px",
     "& ul": {
       display: "inline-block",
       listStyle: "none",

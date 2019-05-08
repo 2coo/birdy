@@ -9,12 +9,12 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  Button,
   Hidden,
   Drawer,
   List,
   ListItem
 } from "@material-ui/core";
+import Button from "components/CustomButtons/Button";
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
@@ -118,11 +118,7 @@ const Header = props => {
                 </li>
               </ul>
             </div>
-            <Button
-              className={classes.orange}
-              target="_blank"
-              className={classes.navLink}
-            >
+            <Button color="warning" target="_blank" className={classes.navLink}>
               ENROL NOW
             </Button>
           </Toolbar>
