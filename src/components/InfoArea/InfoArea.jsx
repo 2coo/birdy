@@ -24,7 +24,7 @@ function InfoArea({ ...props }) {
     });
 
     iconComponent = (
-      <div className={iconWrapper} style={{ fontSize: "70px" }}>
+      <div className={iconWrapper} style={{ color: "black", fontSize: "70px" }}>
         <props.icon
           fontSize="inherit"
           icon={iconName}

@@ -1,25 +1,35 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
-import countSectionStyles from "assets/jss/my-custom-jss/CountSection.jsx";
+import countSectionStyles from "assets/jss/my-custom-jss/views/CountSection.jsx";
 import Grid from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import JetLogo from "assets/img/jet-logo.png";
-
+import Counter from "components/Counter/Counter";
+import classNames from "classnames";
 const CountSection = props => {
   const { classes } = props;
   return (
     <div className={classes.CountSection}>
       <Grid>
-        <GridItem lg={7} md={7} sm={12}>
+        <GridItem lg={5} md={5} sm={12}>
+          <Counter string="12345678" />
+          <h3 className="pd30">Students globally across 140+ countries</h3>
+        </GridItem>
+        <GridItem className="text-xs-center" lg={5} md={5} sm={12}>
           <h3>Prepare to succeed in the IELTS test</h3>
-          <div>
+          <div className="pd30">
             With detailed lessons, tips, full practice tests and answers, IELTS
             Online has everything you need to prepare for the IELTS test.
           </div>
         </GridItem>
-        <GridItem lg={3} md={3} sm={12}>
-          A program developed
+        <GridItem
+          className={classNames(classes.contributer, "text-xs-center")}
+          lg={2}
+          md={2}
+          sm={12}
+        >
+          <h4>A program developed</h4>
           <img src={JetLogo} alt="by Macquarie University" />
         </GridItem>
       </Grid>

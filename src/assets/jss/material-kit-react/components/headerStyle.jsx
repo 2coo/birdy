@@ -31,10 +31,13 @@ const headerStyle = {
     flexFlow: "row nowrap",
     justifyContent: "flex-start",
     position: "relative",
-    zIndex: "unset"
+    zIndex: "unset",
+    opacity: 1,
+    "-webkit-transform": "translate(0,0)",
+    "-webkit-transition": "-webkit-transform .2s,background .3s,color .3s"
   },
   brandImage: {
-    width: "165px"
+    width: "112px"
   },
   absolute: {
     position: "absolute",

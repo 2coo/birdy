@@ -9,8 +9,8 @@ import Parallax from "components/Parallax/Parallax";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import BrandLogo from "assets/img/birdy-logo.png";
-import BrandLogo2 from "assets/img/birdy-logo-black.png";
+import BrandLogo from "assets/img/birdy-text-white.png";
+import BrandLogo2 from "assets/img/birdy-text-black.png";
 import ProductSection from "./Sections/ProductSection";
 import AppBar from "@material-ui/core/AppBar";
 import { Toolbar } from "@material-ui/core";
@@ -26,7 +26,7 @@ const Home = props => {
         brand={BrandLogo}
         brandBlack={BrandLogo2}
         changeColorOnScroll={{
-          height: 70,
+          height: 90,
           color: "dark"
         }}
         {...rest}

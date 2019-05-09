@@ -32,6 +32,8 @@ import idFlag from "assets/img/id.gif";
 import cnFlag from "assets/img/cn.gif";
 import jpFlag from "assets/img/jp.gif";
 
+import withWidth from "@material-ui/core/withWidth";
+
 const Header = props => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [colorIsChanged, setColorIsChanged] = useState(false);
@@ -39,32 +41,76 @@ const Header = props => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const rightLinks = <HeaderLinks isColorChanged={colorIsChanged} />;
+  const {
+    classes,
+    color,
+    leftLinks,
+    brand,
+    brandBlack,
+    changeColorOnScroll,
+    width
+  } = props;
+  const appBarClasses = classNames({
+    [classes.appBar]: true,
+    [classes[color]]: color,
+    [classes.absolute]: !colorIsChanged,
+    [classes.fixed]: colorIsChanged
+  });
+  const brandComponent = <img className={classes.brandImage} src={brand} />;
 
   useEffect(() => {
-    const headerColorChange = () => {
-      const { classes, color, changeColorOnScroll } = props;
-      const windowsScrollTop = window.pageYOffset;
-      if (
-        windowsScrollTop > changeColorOnScroll.height &&
-        windowsScrollTop < prevScrollPos
-      ) {
-        setColorIsChanged(true);
-        document.body
-          .getElementsByTagName("header")[1]
-          .classList.remove(classes[color]);
-        document.body
-          .getElementsByTagName("header")[1]
-          .classList.add(classes[changeColorOnScroll.color]);
+    const checkAndChange = () => {
+      let windowsScrollTop = window.pageYOffset;
+      if (width == "xs") {
+        if (changeColorOnScroll.height < windowsScrollTop) {
+          setColorIsChanged(true);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.remove(classes[color]);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.add(classes[changeColorOnScroll.color]);
+        } else {
+          setColorIsChanged(false);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.add(classes[color]);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.remove(classes[changeColorOnScroll.color]);
+        }
       } else {
-        setColorIsChanged(false);
-        document.body
-          .getElementsByTagName("header")[1]
-          .classList.add(classes[color]);
-        document.body
-          .getElementsByTagName("header")[1]
-          .classList.remove(classes[changeColorOnScroll.color]);
+        if (
+          windowsScrollTop > changeColorOnScroll.height &&
+          windowsScrollTop < prevScrollPos
+        ) {
+          setColorIsChanged(true);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.remove(classes[color]);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.add(classes[changeColorOnScroll.color]);
+        } else {
+          setColorIsChanged(false);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.add(classes[color]);
+          document.body
+            .getElementsByTagName("header")[1]
+            .classList.remove(classes[changeColorOnScroll.color]);
+        }
+        setPrevScrollPos(windowsScrollTop);
       }
-      setPrevScrollPos(windowsScrollTop);
+    };
+    const headerColorChange = e => {
+      checkAndChange();
+      setTimeout(() => {
+        if (window.pageYOffset < changeColorOnScroll.height) {
+          checkAndChange();
+        }
+      }, 300);
     };
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -74,16 +120,15 @@ const Header = props => {
         window.removeEventListener("scroll", headerColorChange);
       }
     };
-  }, [prevScrollPos, props]);
-  const rightLinks = <HeaderLinks isColorChanged={colorIsChanged} />;
-  const { classes, color, leftLinks, brand, brandBlack, absolute } = props;
-  const appBarClasses = classNames({
-    [classes.appBar]: true,
-    [classes[color]]: color,
-    [classes.absolute]: !colorIsChanged,
-    [classes.fixed]: colorIsChanged
-  });
-  const brandComponent = <img className={classes.brandImage} src={brand} />;
+  }, [
+    changeColorOnScroll,
+    classes,
+    color,
+    prevScrollPos,
+    props.changeColorOnScroll,
+    width
+  ]);
+
   return (
     <React.Fragment>
       <Hidden smDown implementation="css">
@@ -174,4 +219,4 @@ const Header = props => {
 
 Header.propTypes = {};
 
-export default withStyles(headerStyle)(Header);
+export default withWidth()(withStyles(headerStyle)(Header));
