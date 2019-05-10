@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import CounterStyles from "../../assets/jss/my-custom-jss/components/Counter";
 
 const Counter = props => {
-  const { classes } = props;
+  const { classes, style } = props;
   const Count = props.string.split("").map((char, index) => {
     return (
       <span key={index} className={classes.Char}>
@@ -13,7 +13,11 @@ const Counter = props => {
       </span>
     );
   });
-  return <div className={classes.Counter}>{Count}</div>;
+  return (
+    <div className={classes.Counter} style={style}>
+      {Count}
+    </div>
+  );
 };
 
 Counter.propTypes = {};

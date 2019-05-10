@@ -65,20 +65,20 @@ const Header = props => {
       if (width == "xs") {
         if (changeColorOnScroll.height < windowsScrollTop) {
           setColorIsChanged(true);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.remove(classes[color]);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.add(classes[changeColorOnScroll.color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.remove(classes[color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.add(classes[changeColorOnScroll.color]);
         } else {
           setColorIsChanged(false);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.add(classes[color]);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.remove(classes[changeColorOnScroll.color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.add(classes[color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.remove(classes[changeColorOnScroll.color]);
         }
       } else {
         if (
@@ -86,20 +86,20 @@ const Header = props => {
           windowsScrollTop < prevScrollPos
         ) {
           setColorIsChanged(true);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.remove(classes[color]);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.add(classes[changeColorOnScroll.color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.remove(classes[color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.add(classes[changeColorOnScroll.color]);
         } else {
           setColorIsChanged(false);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.add(classes[color]);
-          document.body
-            .getElementsByTagName("header")[1]
-            .classList.remove(classes[changeColorOnScroll.color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.add(classes[color]);
+          // document.body
+          //   .getElementsByTagName("header")[1]
+          //   .classList.remove(classes[changeColorOnScroll.color]);
         }
         setPrevScrollPos(windowsScrollTop);
       }

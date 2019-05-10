@@ -8,13 +8,14 @@ const landingPageStyle = {
     paddingBottom: "30px"
   },
   title: {
-    ...title,
     display: "inline-block",
     position: "relative",
-    marginTop: "130px",
+    marginTop: "20px",
     minHeight: "32px",
+    fontSize: "24px",
     color: "#FFFFFF",
-    textDecoration: "none"
+    textDecoration: "none",
+    color: "#157887"
   },
   description: {
     marginTop: "85px",
@@ -56,6 +57,9 @@ const landingPageStyle = {
   // }
   CountSection: {
     backgroundColor: "#434549"
+  },
+  textCenter: {
+    textAlign: "center"
   }
 };
 

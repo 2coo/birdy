@@ -52,6 +52,16 @@ const ProductSection = props => {
               vertical
             />
           </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <InfoArea
+              title="Simulate exam conditions"
+              description="Studying for the IELTS test involves more than just reading and writing. Our IELTS preparation courses include practical activities in listening and speaking, allowing you to listen to audio samples and record your own speaking that can be submitted for assessment by qualified IELTS Tutors. Answer the questions by choosing onscreen, or typing your answers within the course."
+              iconName="fas fa-object-ungroup"
+              iconColor="inherit"
+              icon={FontAwesomeIcon}
+              vertical
+            />
+          </GridItem>
         </GridContainer>
       </div>
     </div>

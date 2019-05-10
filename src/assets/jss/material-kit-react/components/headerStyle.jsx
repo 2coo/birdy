@@ -42,7 +42,7 @@ const headerStyle = {
   absolute: {
     position: "absolute",
     zIndex: "1100",
-    top: "80px"
+    top: "72px"
   },
   fixed: {
     position: "fixed",

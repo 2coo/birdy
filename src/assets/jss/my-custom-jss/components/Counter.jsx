@@ -9,19 +9,19 @@ const CounterStyles = {
   },
   Char: {
     backgroundSize: "contain",
-    width: "50px",
-    height: "64px",
-    paddingTop: "25px",
+    width: "81px",
+    height: "103px",
+    paddingTop: "44px",
     display: "inline-block",
     background: "url(" + CounterBg + ") top center no-repeat",
     marginRight: "5px",
-    fontSize: "45px",
+    fontSize: "70px",
     position: "relative"
   },
   Stroke: {
-    left: "8px",
-    top: "31px",
-    width: "34px",
+    left: "13px",
+    top: "50px",
+    width: "55px",
     height: "2px",
     position: "absolute",
     background: "#000"

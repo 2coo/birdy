@@ -12,11 +12,7 @@ const CountSection = props => {
   return (
     <div className={classes.CountSection}>
       <Grid>
-        <GridItem lg={5} md={5} sm={12}>
-          <Counter string="12345678" />
-          <h3 className="pd30">Students globally across 140+ countries</h3>
-        </GridItem>
-        <GridItem className="text-xs-center" lg={5} md={5} sm={12}>
+        <GridItem className="text-xs-center" lg={10} md={10} sm={12}>
           <h3>Prepare to succeed in the IELTS test</h3>
           <div className="pd30">
             With detailed lessons, tips, full practice tests and answers, IELTS
